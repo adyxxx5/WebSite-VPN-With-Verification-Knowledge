@@ -89,7 +89,7 @@ BEGIN
 END //
 DELIMITER ;
 
-/*People who did the test with scores*/
+/*People who did the test with score*/
 DELIMITER //
 CREATE PROCEDURE SessionsUser()
 BEGIN
@@ -104,3 +104,7 @@ INSERT INTO SESSIONS VALUES(1, "15", 23, 1);
 INSERT INTO QUESTIONS VALUES(1, "Che cosa e' l'HOMEWORKING?"),(2, "Che cosa e'?");
 INSERT INTO ANSWERS VALUES(1,"RISPOSTA A", FALSE, 1),(2,"RISPOSTA B", FALSE, 1), (3,"RISPOSTA C", TRUE, 1), (4,"RISPOSTA A", TRUE, 2);
 
+GRANT EXECUTE ON PROCEDURE UserDoTest TO utente IDENTIFIED BY 'password';
+GRANT EXECUTE ON PROCEDURE TimeUserDoTest TO utente IDENTIFIED BY 'password';
+GRANT EXECUTE ON PROCEDURE SeeQuestion TO utente IDENTIFIED BY 'password';
+GRANT EXECUTE ON PROCEDURE SessionsUser TO utente IDENTIFIED BY 'password';
