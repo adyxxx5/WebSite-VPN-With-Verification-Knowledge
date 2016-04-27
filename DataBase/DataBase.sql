@@ -97,14 +97,31 @@ BEGIN
 END //
 DELIMITER ;
 
+/*People that passed the test*/
+DELIMITER //
+CREATE PROCEDURE PassTest()
+BEGIN
+	SELECT NAME, LASTNAME, POINTS FROM USERS INNER JOIN SESSIONS ON POINTS>=15 WHERE USERS.ID_USER=SESSIONS.ID_USER;  
+END //
+DELIMITER ;
+
+/*People that NOT passed the test*/
+DELIMITER //
+CREATE PROCEDURE FailTest()
+BEGIN
+	SELECT NAME, LASTNAME, POINTS FROM USERS INNER JOIN SESSIONS ON POINTS<15 WHERE USERS.ID_USER=SESSIONS.ID_USER;  
+END //
+DELIMITER ;
 
 /*Test data */
-INSERT INTO USERS VALUES(1, "Adi", "Aioane", 18, "adyxxx5@yahoo.com", 1),(2, "Pippo", "Paperino", 15, "pippo.paperino@yahoo.it",1);
-INSERT INTO SESSIONS VALUES(1, "15", 23, 1);
+INSERT INTO USERS VALUES(1, "Adi", "Aioane", 18, "adyxxx5@yahoo.com", 1),(2, "Pippo", "Paperino", 12, "pippo.paperino@yahoo.it",1);
+INSERT INTO SESSIONS VALUES(1, "15", 23, 1),(2,'23',12,2);
 INSERT INTO QUESTIONS VALUES(1, "Che cosa e' l'HOMEWORKING?"),(2, "Che cosa e'?");
 INSERT INTO ANSWERS VALUES(1,"RISPOSTA A", FALSE, 1),(2,"RISPOSTA B", FALSE, 1), (3,"RISPOSTA C", TRUE, 1), (4,"RISPOSTA A", TRUE, 2);
 
+/*Permission for procedure
 GRANT EXECUTE ON PROCEDURE UserDoTest TO utente IDENTIFIED BY 'password';
 GRANT EXECUTE ON PROCEDURE TimeUserDoTest TO utente IDENTIFIED BY 'password';
 GRANT EXECUTE ON PROCEDURE SeeQuestion TO utente IDENTIFIED BY 'password';
 GRANT EXECUTE ON PROCEDURE SessionsUser TO utente IDENTIFIED BY 'password';
+*/
