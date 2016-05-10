@@ -384,7 +384,11 @@ a:hover {
     padding-right: 15%;
 	size="4";
 }
-
+.label{
+  display: inline-block;
+  width: 140px;
+  text-align: right;
+}
 .clear {
   float: none !important;
   clear: both;

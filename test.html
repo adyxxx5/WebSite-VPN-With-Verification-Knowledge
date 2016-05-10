@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<title>VPN About</title>
+<title>Test VPN</title>
 <meta charset="utf-8">
 <meta name = "format-detection" content = "telephone=no" />
 <link rel="icon" href="images/favicon.ico">
@@ -16,11 +16,18 @@
 <script src="js/jquery.mobilemenu.js"></script>
 <script src="js/tmStickUp.js"></script>
 <script src="js/jquery.ui.totop.js"></script>
+<script src="js/jquery.shuffle-images.js"></script>
 <script>
  $(window).load(function(){
   $().UItoTop({ easingType: 'easeOutQuart' });
   $('#stuck_container').tmStickUp({});  
  }); 
+
+ $(document).ready(function(){
+       $(".shuffle-me").shuffleImages({
+         target: ".images > img"
+       });
+    });
 
 </script>
 <!--[if lt IE 8]>
@@ -36,12 +43,12 @@
 <![endif]-->
 </head>
 
-<body>
+<body class="page1" id="top">
 <!--==============================
               header
 =================================-->
 <header>
-  <section id="stuck_container">
+	<section id="stuck_container">
   <!--==============================
               Stuck menu
   =================================-->
@@ -57,8 +64,8 @@
             <nav>
               <ul class="sf-menu">
                <li><a href="index.html">Home</a></li>
-               <li class="current"><a href="about.html">About</a></li>
-			   <li><a href="test.html">Test</a></li>
+               <li><a href="about.html">About</a></li>
+			   <li class="current"><a href="test.html">Test</a></li>
 			   <li><a href="#">work in progress</a></li>
              </ul>
             </nav>
@@ -73,25 +80,25 @@
 <!--=====================
           Content
 ======================-->
-<section id="content">
+<section id="content"><div class="ic"></div>
   <div class="container">
     <div class="row">
       <div class="grid_12">
-        <h2>Che puoi trovare qui?</h2>
-          <img src="images/page2_img1.jpg" alt="immagine punto di domanda" class="img_inner fleft">
-          <br></br>
-		  <p>In questo sitoWeb viene descritto le reti VPN (Virtual Private Network). I vantaggi che presentano, le loro caratteristiche e principali funzioni; l’ambito in cui vengono applicate e i tipi di VPN. Per di più, vi sono presenti argomenti sulla sicurezza come il concetto di tunnelling. Spiegherò gli algoritmi di crittografia e i protocolli di sicurezza usati nelle trasmissioni in tali reti. </p>
-		  <br></br>
-		  <p>In conclusione ci sara una pagina dedicata per eseguire una verifica di quello che ha appreso da questo sitoWeb. alla fine del test vi vera dato un punteggio con un voto facendovi capire se sapete questo argomento</p>
-          <br></br><br></br><br></br>
-		  <div class="sep-1 offset__1"></div>
-		  <img src="images/page2_img2.png" alt="" class="img_inner img_fright">
-		  <h2>Cosa sono le VPN?</h2>
-          <p>Una VPN (Virtual Private Network) è una rete privata che sfrutta le potenzialità di una rete pubblica, come Internet. In altre parole, essa permette a computer e ad altri dispositivi di veicolare dati all’interno della rete pubblica Internet, la quale viene sfruttata come se fosse una rete privata, poiché solo le persone autorizzate possono accedervi. In questo modo, una LAN(Local Area Network) diventa una WAN(Wide Area Network).L’uso più comune delle Reti Virtuali Private è nelle grandi aziende che abbiano filiali estese su un ampio territorio. 
-</p>
+        <h2 class="ta__center">Registrazione del Test</h2>
+        <div class="shuffle-group">
+          <div class="row">
+              <form name="form1" action="registrazione.php" method="POST">
+				<p class="ta__center" style="align:right display:inline-block;">Nome:        <input type="text" name="nome" class="btn"></p>
+				<p class="ta__center" style="align:right display:inline-block;">Cognome:  <input type="text" name="mail" class="btn"></p>
+				<p class="ta__center" style="align:right display:inline-block;">Eta:            <input type="text" name="pwd" class="btn"></p>
+				<p class="ta__center" ><input type="submit" value="Inizia il Test" class="btn"></p>
+            <div class="clear"></div>
+            </div>
+          </div>
       </div>
     </div>
   </div>
+  <div class="sep-1"></div>
 </section>
 <!--==============================
               footer
