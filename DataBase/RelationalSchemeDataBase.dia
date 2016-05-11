@@ -342,7 +342,7 @@
         <dia:point val="37.8,15.55"/>
       </dia:attribute>
       <dia:attribute name="obj_bb">
-        <dia:rectangle val="37.8,14.91;40.59,18.8825"/>
+        <dia:rectangle val="37.8,14.8907;40.6093,18.1211"/>
       </dia:attribute>
       <dia:attribute name="text">
         <dia:composite type="text">
@@ -350,8 +350,7 @@
             <dia:string>#ID_User
 Name
 LastName
-Age
-Email#</dia:string>
+Age#</dia:string>
           </dia:attribute>
           <dia:attribute name="font">
             <dia:font family="sans" style="0" name="Helvetica"/>
@@ -379,13 +378,13 @@ Email#</dia:string>
         <dia:point val="10.3,23.55"/>
       </dia:attribute>
       <dia:attribute name="obj_bb">
-        <dia:rectangle val="10.3,22.8907;16.9993,25.3211"/>
+        <dia:rectangle val="10.2807,22.8907;16.98,25.3211"/>
       </dia:attribute>
       <dia:attribute name="text">
         <dia:composite type="text">
           <dia:attribute name="string">
             <dia:string>#ID_Answer
-TextAnswer
+Answer
 CorrectAnswer (bolean)#</dia:string>
           </dia:attribute>
           <dia:attribute name="font">
@@ -650,14 +649,14 @@ Question
         <dia:point val="25.4,15.8"/>
       </dia:attribute>
       <dia:attribute name="obj_bb">
-        <dia:rectangle val="25.4,15.16;28.5425,19.1325"/>
+        <dia:rectangle val="25.4,15.1407;28.5618,19.1711"/>
       </dia:attribute>
       <dia:attribute name="text">
         <dia:composite type="text">
           <dia:attribute name="string">
             <dia:string>#ID_Session
-StartDate
-EndDate
+Times
+Timer
 Points
 #</dia:string>
           </dia:attribute>
