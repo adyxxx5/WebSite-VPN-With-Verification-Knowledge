@@ -1,28 +1,24 @@
 <?php
-$servername = "localhost:3307";
-$username = "root";
-$password = "usbw";
-$dbname = "websitevpn";
+// Configuration for the conection with the data base
+require 'config.php';
+
+// Check the variables that I receive from the HTML page.
 if (!empty($_REQUEST["name"]) and (!empty($_REQUEST['lastname'])) and (!empty($_REQUEST['age']))) 
 { 
     $name = $_REQUEST['name'];
     $lastname = $_REQUEST['lastname'];
     $age = $_REQUEST['age'];
-            
-    // Create connection
-    $conn = mysqli_connect($servername, $username, $password, $dbname);
-    
-    // Check connection
-    if (!$conn) {
-        die("Connection failed: " . mysqli_connect_error()); }
-
-    $sql = "INSERT INTO USERS VALUES (NULL, $name, $lastname, $age)";
-
+	
+	//mySQL string for insert a new usere
+    $sql = "INSERT INTO USERS VALUES (null, '$name', '$lastname', $age)";
+	
+	// Check the mySQL string work
     if (mysqli_query($conn, $sql)) {
-        echo "New record created successfully"; } 
+        echo "New user added successfully"; } 
     else {
         echo "Error: " . $sql . "<br>" . mysqli_error($conn); }
 
+	//Close connection
     mysqli_close($conn);
 }
 else
