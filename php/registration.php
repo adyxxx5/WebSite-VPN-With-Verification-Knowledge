@@ -14,13 +14,12 @@ if (!empty($_REQUEST["name"]) and (!empty($_REQUEST['lastname'])) and (!empty($_
 	
 	// Check the mySQL string work
     if (mysqli_query($conn, $sql)) {
-        echo "New user added successfully"; } 
+    require 'test.php';
+	} 
     else {
         echo "Error: " . $sql . "<br>" . mysqli_error($conn); }
-
-	//Close connection
-    mysqli_close($conn);
 }
 else
     echo  "<script type='text/javascript'>alert('Hai lasciato qualche campo vuoto, completa tutti i campi! Ritorna sulla pagina di test e riprova che qualcosa è andato storto!');</script>"; 
+
 ?>

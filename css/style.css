@@ -199,12 +199,6 @@ p.offset__1 {
 p.offset__2 {
   margin-bottom: 16px;
 }
-input,
-textarea {
-  border-radius: 0 !important;
-  outline: none !important;
-  -webkit-appearance: none;
-}
 img {
   max-width: 100%;
 }
@@ -408,7 +402,6 @@ header {
   display: block;
   position: relative;
   z-index: 999;
-  background: url(../images/slide.jpg) center 0 no-repeat;
 }
 header .rel {
   z-index: 999;
@@ -441,7 +434,6 @@ header .header_top {
   letter-spacing: -1px;
   font: 300 30px/48px 'Dosis', sans-serif;
   padding: 182px 0 198px;
-  background: url(../images/slider.jpg) center 0 no-repeat;
 }
 /****Content****/
 #content {

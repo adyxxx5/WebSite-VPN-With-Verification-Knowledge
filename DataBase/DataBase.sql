@@ -1,5 +1,5 @@
 DROP DATABASE IF EXISTS WebSiteVPN;
-CREATE DATABASE WebSiteVPN;
+CREATE DATABASE WebSiteVPN DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci;
 USE WebSiteVPN;
 
 /*TABLE ID_USERS*/
@@ -48,69 +48,25 @@ CREATE TABLE ANSWERS(
 );
 
 
-/*See the "n" questions*/
-DELIMITER //
-CREATE PROCEDURE Question(_num INTEGER)
-BEGIN
-	SELECT ID_QUESTION, QUESTION FROM QUESTIONS ORDER BY RAND() LIMIT _NUM;
-END //
-DELIMITER ;
-
-/*See the answer for question "n"*/
-DELIMITER //
-CREATE PROCEDURE Answer(_Question INTEGER)
-BEGIN
-	SELECT ANSWER FROM ANSWERS WHERE ID_QUESTION=_QUESTION;
-END //
-DELIMITER ;
-
-/*Name of the users who have did the test*/
-DELIMITER //
-CREATE PROCEDURE UserDoTest()
-BEGIN
-	SELECT NAME, LASTNAME, AGE FROM USERS;
-END //
-DELIMITER ;
-
-/*Insert value in table users*/
-DELIMITER //
-CREATE PROCEDURE ValueUser(_name VARCHAR(30), _lastName VARCHAR(30), _age INTEGER)
-BEGIN
-	INSERT INTO USERS VALUES(NULL,_name, _lastName, _age);
-END //
-DELIMITER ;
-
-/*Insert value in table sessions*/
-DELIMITER //
-CREATE PROCEDURE ValueSession(_timer INTEGER, _points INTEGER, _id_User INTEGER)
-BEGIN
-	INSERT INTO SESSIONS VALUES(NULL, _timer, _points, _id_User);
-END //
-DELIMITER ;
-
-
-
-
-
 /*Test data*/
 INSERT INTO USERS VALUES(1, "Adi", "Aioane", 18),(2, "Pippo", "Paperino", 12);
 INSERT INTO SESSIONS VALUES(1, 20, 23, 1),(2, 25, 12, 2);
 INSERT INTO QUESTIONS VALUES
-(1, "Quali tra questi sono vantaggi della delle reti private con canali dedicati?"),
-(2,"Quali tra questi sono svantaggi della delle reti private con canali dedicati?"),
+(1, "Quali tra questi sono i vantaggi delle reti private con canali dedicati?"),
+(2,"Quali tra questi sono i svantaggi della delle reti private con canali dedicati?"),
 (3, "Quanti tipi di reti VPN (Virtual Private Network) esistono?"),
-(4, "Quale tra queste tipi di reti VPN è adatta per aziende di piccole dimensioni?"),
-(5, "Quale tra queste tipi di reti VPN è viene utilizzata da aziende di grandi dimensioni per conettersi con sedi piu piccole fisse?"),
+(4, "Quale tra queste tipi di reti VPN e' adatta per aziende di piccole dimensioni?"),
+(5, "Quale tra queste tipi di reti VPN viene utilizzata da aziende di grandi dimensioni per conettersi con sedi piu piccole fisse?"),
 (6, "Quanti tipi di Site-to-site VPN esistono?"),
 (7, "Quali di queste reti VPN permette di collegare una sede con piu sedi in una rete privata?"),
 (8, "Che cosa vuol dire server AAA?"),
 (9, "Quale protocollo viene maggiormente uttilizzato nelle reti VPN per lo scambio delle chiavi di cifratura?"),
-(10, "La definizione di tunneling è?"),
+(10, "La definizione di tunneling consiste?"),
 (11, "Quali sono i tre protocolli che costituiscono IPsec?"),
-(12, "Che cosa è SSL (Secure Socket Layer) e TSL (Transport Layer Security)?"),
+(12, "Che cosa e' SSL (Secure Socket Layer) e TSL (Transport Layer Security)?"),
 (13, "Le reti VPN possono essere classificate in base ai protocolli che utilizzano e al grado di sicurezza, quante categorie esistono?"),
-(14, "Seleziona la/e risposta/e corrette sulle reti Trusted VPN:"),
-(15, "Seleziona la/e risposta/e corrette sulle Reti Secure VPN:"),
+(14, "Seleziona la risposta corretta sulle reti Trusted VPN:"),
+(15, "Seleziona la risposta corretta sulle Reti Secure VPN:"),
 (16, "Quale di queste affermazioni sono vere?"),
 (17, "I tipi principali di reti VPN in commercio adottano i protocolli di tipo:"),
 (18, "Il protocollo MPLS (Multi-Protocol Label Switching) ha lo scopo di:"),
